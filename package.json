@@ -1,0 +1,49 @@
+{
+  "name": "youly-en",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "catalog": {
+      "dotenv": "^18.0.3",
+      "zod": "^4.6.5",
+      "@types/bun": "^1.4.2",
+      "better-auth": "1.6.22"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "check-types": "turbo check-types",
+    "dev:web": "turbo -F web dev",
+    "dev:server": "turbo -F server dev",
+    "db:push": "turbo -F @youly-en/db db:push",
+    "db:studio": "turbo -F @youly-en/db db:studio",
+    "db:generate": "turbo -F @youly-en/db db:generate",
+    "db:migrate": "turbo -F @youly-en/db db:migrate",
+    "db:start": "turbo -F @youly-en/db db:start",
+    "db:watch": "turbo -F @youly-en/db db:watch",
+    "db:stop": "turbo -F @youly-en/db db:stop",
+    "db:down": "turbo -F @youly-en/db db:down",
+    "check": "biome check --write ."
+  },
+  "dependencies": {
+    "@youly-en/env": "workspace:*",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.14",
+    "@types/bun": "catalog:",
+    "@youly-en/config": "workspace:*",
+    "turbo": "2.11.3",
+    "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "kysely": "0.28.17"
+  },
+  "packageManager": "bun@1.4.2"
+}
