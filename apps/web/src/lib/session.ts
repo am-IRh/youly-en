@@ -8,10 +8,10 @@ type ServerSession = {
   user: {
     id: string;
     name: string;
-    image?: string | null;
+    role: "user" | "admin";
     phoneNumber?: string | null;
     phoneNumberVerified?: boolean;
-    createdAt: string; // ISO string (JSON)
+    createdAt: string;
   };
   session: { id: string; expiresAt: string };
 };
@@ -37,5 +37,13 @@ export const getServerSession = cache(async (): Promise<ServerSession | null> =>
 export async function requireSession(): Promise<ServerSession> {
   const session = await getServerSession();
   if (!session) redirect("/login");
+  return session;
+}
+
+export async function requireAdmin(): Promise<ServerSession> {
+  const session = await requireSession();
+  if (session.user.role !== "admin") {
+    redirect("/");
+  }
   return session;
 }

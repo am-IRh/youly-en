@@ -34,7 +34,7 @@ export default function LoginPage() {
         code: value.code,
       });
       if (error) return setServerError(error.message ?? "کد اشتباهه");
-      router.refresh();
+      router.replace("/");
     },
   });
 

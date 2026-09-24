@@ -102,3 +102,8 @@ export async function getPendingLessons(page = 1, limit = 20) {
 
   return paginated(items, total, page, limit);
 }
+
+export async function getLessonById(lessonId: string) {
+  const [lesson] = await db.select().from(lessons).where(eq(lessons.id, lessonId)).limit(1);
+  return lesson ?? null;
+}

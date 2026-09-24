@@ -22,6 +22,20 @@
       "when": 1790188559555,
       "tag": "0002_greedy_captain_america",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1790291385111,
+      "tag": "0003_whole_leo",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1790292108572,
+      "tag": "0004_wise_thing",
+      "breakpoints": true
     }
   ]
 }

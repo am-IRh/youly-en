@@ -33,3 +33,25 @@ export async function getLevelBySlug(courseSlug: string, levelSlug: string) {
     .limit(1);
   return level ?? null;
 }
+
+export async function createLevel(data: {
+  courseId: string;
+  slug: string;
+  title: string;
+  order: number;
+}) {
+  const [level] = await db.insert(levels).values(data).returning();
+  return level;
+}
+
+export async function updateLevel(
+  levelId: string,
+  data: Partial<{ title: string; order: number }>,
+) {
+  const [level] = await db.update(levels).set(data).where(eq(levels.id, levelId)).returning();
+  return level ?? null;
+}
+
+export async function getLevelsByCourseId(courseId: string) {
+  return db.select().from(levels).where(eq(levels.courseId, courseId)).orderBy(levels.order);
+}

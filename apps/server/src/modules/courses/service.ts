@@ -19,3 +19,25 @@ export async function getCourseBySlug(slug: string) {
   const [course] = await db.select().from(courses).where(eq(courses.slug, slug)).limit(1);
   return course ?? null;
 }
+
+export async function createCourse(data: {
+  slug: string;
+  title: string;
+  description?: string;
+  coverImageUrl?: string;
+}) {
+  const [course] = await db.insert(courses).values(data).returning();
+  return course;
+}
+
+export async function updateCourse(
+  courseId: string,
+  data: Partial<{ title: string; description: string; coverImageUrl: string }>,
+) {
+  const [course] = await db
+    .update(courses)
+    .set({ ...data, updatedAt: new Date() })
+    .where(eq(courses.id, courseId))
+    .returning();
+  return course ?? null;
+}
