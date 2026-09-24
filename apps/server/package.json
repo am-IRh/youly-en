@@ -1,7 +1,10 @@
 {
-  "name": "server",
+  "name": "@youly-en/api",
   "type": "module",
   "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "scripts": {
     "build": "tsdown",
     "check-types": "tsc -b",
@@ -10,6 +13,7 @@
     "start": "bun run dist/index.js"
   },
   "dependencies": {
+    "@elysia/openapi": "^1.4.16",
     "@elysiajs/cors": "^1.4.2",
     "@youly-en/auth": "workspace:*",
     "@youly-en/db": "workspace:*",
@@ -17,12 +21,13 @@
     "better-auth": "catalog:",
     "dotenv": "catalog:",
     "elysia": "^1.4.30",
-    "zod": "catalog:"
+    "zod": "catalog:",
+    "drizzle-orm": "catalog:"
   },
   "devDependencies": {
     "@types/bun": "catalog:",
     "@youly-en/config": "workspace:*",
     "tsdown": "^0.23.0",
-    "typescript": "^6.0.3"
+    "typescript": "catalog:"
   }
 }

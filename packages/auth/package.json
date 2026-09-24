@@ -20,7 +20,8 @@
     "@youly-en/env": "workspace:*",
     "better-auth": "catalog:",
     "dotenv": "catalog:",
-    "zod": "catalog:"
+    "zod": "catalog:",
+    "@youly-en/utils": "workspace:*"
   },
   "devDependencies": {
     "@youly-en/config": "workspace:*",

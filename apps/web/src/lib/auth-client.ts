@@ -1,6 +1,4 @@
-import { env } from "@youly-en/env/web";
+import { phoneNumberClient } from "better-auth/client/plugins";
 import { createAuthClient } from "better-auth/react";
 
-export const authClient = createAuthClient({
-  baseURL: env.NEXT_PUBLIC_SERVER_URL,
-});
+export const authClient = createAuthClient({ plugins: [phoneNumberClient()] });

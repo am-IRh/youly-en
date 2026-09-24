@@ -4,16 +4,18 @@
   "private": true,
   "scripts": {
     "check-types": "tsc --noEmit",
-    "dev": "next dev --port 3001",
+    "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
+    "@elysiajs/eden": "^1.4.9",
     "@fontsource-variable/inter": "^5.3.0",
     "@tanstack/react-form": "^1.33.5",
     "@youly-en/auth": "workspace:*",
     "@youly-en/env": "workspace:*",
+    "@youly-en/utils": "workspace:*",
     "babel-plugin-react-compiler": "^1.0.0",
     "better-auth": "catalog:",
     "class-variance-authority": "^0.7.1",
@@ -38,6 +40,7 @@
     "@types/react-dom": "^19.3.0",
     "@youly-en/config": "workspace:*",
     "tailwindcss": "^4.3.3",
-    "typescript": "^5"
+    "typescript": "^catalog:*",
+    "@youly-en/api": "workspace:*"
   }
 }

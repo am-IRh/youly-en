@@ -23,7 +23,7 @@
   "dependencies": {
     "@youly-en/env": "workspace:*",
     "dotenv": "catalog:",
-    "drizzle-orm": "^0.45.2",
+    "drizzle-orm": "catalog:",
     "pg": "^8.23.0",
     "zod": "catalog:"
   },

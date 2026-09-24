@@ -10,7 +10,9 @@
       "dotenv": "^18.0.3",
       "zod": "^4.6.5",
       "@types/bun": "^1.4.2",
-      "better-auth": "1.6.22"
+      "better-auth": "^1.6.22",
+      "typescript": "7.0.2",
+      "drizzle-orm": "^0.45.2"
     }
   },
   "type": "module",
@@ -28,11 +30,12 @@
     "db:watch": "turbo -F @youly-en/db db:watch",
     "db:stop": "turbo -F @youly-en/db db:stop",
     "db:down": "turbo -F @youly-en/db db:down",
-    "check": "biome check --write ."
+    "check": "biome check --write"
   },
   "dependencies": {
     "@youly-en/env": "workspace:*",
     "dotenv": "catalog:",
+    "youly-en": ".",
     "zod": "catalog:"
   },
   "devDependencies": {
